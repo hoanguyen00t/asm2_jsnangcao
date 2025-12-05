@@ -92,53 +92,6 @@ function showNotification(message) {
     }, 2000);
 }
 
-
-// load sản phẩm cho trang chủ
-async function loadProducts() {
-    try {
-        let response = await fetch(API_URL + '/products');
-        let data = await response.json();
-        renderProducts(data);
-    } catch (error) {
-        console.log('Lỗi:', error);
-        let grid = document.getElementById('products-grid');
-        if (grid) {
-            grid.innerHTML = '<div class="loading">Không thể tải sản phẩm. Vui lòng kiểm tra API server.</div>';
-        }
-    }
-}
-
-// hiển thị danh sách sản phẩm
-function renderProducts(products) {
-    let grid = document.getElementById('products-grid');
-    if (!grid) return;
-
-    if (products.length === 0) {
-        grid.innerHTML = '<div class="loading">Không có sản phẩm nào</div>';
-        return;
-    }
-
-    let html = '';
-    for (let i = 0; i < products.length; i++) {
-        let p = products[i];
-        html += `
-            <div class="product-card" onclick="window.location.href='product-detail.html?id=${p.id}'">
-                <img src="${p.image}" alt="${p.name}" class="product-image" 
-                     onerror="this.src='https://via.placeholder.com/280x250?text=No+Image'">
-                <div class="product-info">
-                    <h3 class="product-name">${p.name}</h3>
-                    <div class="product-price">${formatPrice(p.price)}</div>
-                    <p class="product-description">${p.description}</p>
-                    <button class="btn btn-primary" onclick="event.stopPropagation(); addToCartById(${p.id})">
-                        Thêm vào giỏ
-                    </button>
-                </div>
-            </div>
-        `;
-    }
-    grid.innerHTML = html;
-}
-
 // thêm vào giỏ hàng bằng id
 async function addToCartById(productId) {
     try {
@@ -154,14 +107,5 @@ async function addToCartById(productId) {
 // khi trang load xong
 document.addEventListener('DOMContentLoaded', function() {
     updateCartCount();
-    
-    // kiểm tra xem có phải trang chủ không
-    let grid = document.getElementById('products-grid');
-    let path = window.location.pathname;
-    let isHome = path.includes('index.html') || path.endsWith('/') || !path.includes('.html');
-    
-    if (grid && isHome) {
-        loadProducts();
-    }
 });
 

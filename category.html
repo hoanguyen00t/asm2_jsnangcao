@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục - Cửa hàng điện tử</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🛍️ Cửa hàng điện tử</h1>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Trang chủ</a>
+                    <a href="category.html" class="nav-link active">Danh mục</a>
+                    <a href="cart.html" class="nav-link">
+                        Giỏ hàng
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">Danh mục sản phẩm</h2>
+                <div class="categories-grid" id="categories-grid">
+                    <!-- Categories will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section" id="products-by-category" style="display: none;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" id="category-products-title">Sản phẩm</h2>
+                    <button class="btn btn-secondary" onclick="showAllCategories()">← Quay lại</button>
+                </div>
+                <div class="products-grid" id="category-products-grid">
+                    <!-- Products by category will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Cửa hàng điện tử. Bản quyền thuộc về cửa hàng.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="category.js"></script>
+</body>
+</html>
+
