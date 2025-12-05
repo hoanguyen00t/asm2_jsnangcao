@@ -11,6 +11,10 @@
     {
       "id": 3,
       "name": "Tai nghe"
+    },
+    {
+      "name": "hainam",
+      "id": 4
     }
   ],
   "products": [
@@ -37,6 +41,14 @@
       "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500",
       "price": 5990000,
       "description": "AirPods Pro 2 với chống ồn chủ động, chip H2 và pin 30 giờ"
+    },
+    {
+      "name": "fewf",
+      "categoryId": 1,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSur3-fswiT6dv5M5MFXfY28fEyhKE28mHNmkziYZSCiXRPy77OB3TswggVRTmr_47Byf8ju8tshtj9X8vLlWTuYfZGJ_Z8VJpix4kX0I9F&s=10",
+      "price": 12222,
+      "description": "afas",
+      "id": 6
     }
   ]
 }
