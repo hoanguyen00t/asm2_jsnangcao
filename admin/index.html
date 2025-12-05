@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Quản lý cửa hàng</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="admin-container">
+      <header class="admin-header">
+        <h1>🛍️ Quản lý cửa hàng</h1>
+        <nav class="admin-nav">
+          <button class="nav-btn active" data-page="categories">
+            Danh mục
+          </button>
+          <button class="nav-btn" data-page="products">Sản phẩm</button>
+        </nav>
+      </header>
+
+      <main class="admin-main">
+        <!-- Categories Section -->
+        <section id="categories-section" class="admin-section active">
+          <div class="section-header">
+            <h2>Quản lý Danh mục</h2>
+            <button class="btn btn-primary" id="add-category-btn">
+              + Thêm danh mục
+            </button>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Tên danh mục</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="categories-table-body">
+                <!-- Categories will be loaded here -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products-section" class="admin-section">
+          <div class="section-header">
+            <h2>Quản lý Sản phẩm</h2>
+            <button class="btn btn-primary" id="add-product-btn">
+              + Thêm sản phẩm
+            </button>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Ảnh</th>
+                  <th>Tên sản phẩm</th>
+                  <th>Danh mục</th>
+                  <th>Giá</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="products-table-body">
+                <!-- Products will be loaded here -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Category Modal -->
+    <div id="category-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="category-modal-title">Thêm danh mục</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <form id="category-form">
+          <div class="form-group">
+            <label for="category-name">Tên danh mục *</label>
+            <input type="text" id="category-name" required />
+          </div>
+          <div class="form-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="cancel-category-btn"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-primary">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="product-modal-title">Thêm sản phẩm</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <form id="product-form">
+          <div class="form-group">
+            <label for="product-name">Tên sản phẩm *</label>
+            <input type="text" id="product-name" required />
+          </div>
+          <div class="form-group">
+            <label for="product-category">Danh mục *</label>
+            <select id="product-category" required>
+              <option value="">Chọn danh mục</option>
+              <!-- Categories will be loaded here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="product-image">URL ảnh *</label>
+            <input type="url" id="product-image" required />
+          </div>
+          <div class="form-group">
+            <label for="product-price">Giá tiền (VNĐ) *</label>
+            <input type="number" id="product-price" min="0" required />
+          </div>
+          <div class="form-group">
+            <label for="product-description">Mô tả *</label>
+            <textarea id="product-description" rows="4" required></textarea>
+          </div>
+          <div class="form-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="cancel-product-btn"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-primary">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

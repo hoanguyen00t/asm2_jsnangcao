@@ -1,0 +1,42 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Điện thoại"
+    },
+    {
+      "id": 2,
+      "name": "Laptop"
+    },
+    {
+      "id": 3,
+      "name": "Tai nghe"
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "name": "MacBook Pro 16 inch",
+      "categoryId": 2,
+      "image": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500",
+      "price": 59990000,
+      "description": "MacBook Pro 16 inch với chip M3 Pro, màn hình Liquid Retina XDR và pin 22 giờ"
+    },
+    {
+      "id": 4,
+      "name": "Dell XPS 15",
+      "categoryId": 2,
+      "image": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500",
+      "price": 45990000,
+      "description": "Dell XPS 15 với Intel Core i7, màn hình OLED 15.6 inch và card đồ họa RTX 4050"
+    },
+    {
+      "id": 5,
+      "name": "AirPods Pro 2",
+      "categoryId": 3,
+      "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500",
+      "price": 5990000,
+      "description": "AirPods Pro 2 với chống ồn chủ động, chip H2 và pin 30 giờ"
+    }
+  ]
+}
